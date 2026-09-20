@@ -1,20 +1,20 @@
 # Design System & Technical Architecture
 
 ## 1. Project Overview
-* **Project Name**: [Your Website Name]
+* **Project Name**:https://animamotors.github.io/
 * **Design Generator**: Google Stitch
 * **Hosting Platform**: GitHub Pages
-* **Repository**: [Link to your GitHub Repo]
+* **Repository**:https://github.com/animamotors/animamotors.github.io
 
 ---
 
 ## 2. UI/UX & Visual Design
-* **Design Philosophy**: Clean, modern, and responsive layout generated via Google Stitch prompts.
+* **Design Philosophy**: Clean, modern, hooking web interface and responsive layout generated via Google Stitch prompts.
 * **Color Palette**:
-  * Primary: `#XXXXXX`
-  * Secondary: `#XXXXXX`
-  * Accent / CTA: `#XXXXXX`
-  * Background: `#XXXXXX`
+  * Primary: white
+  * Secondary: black
+  * Accent / CTA: grey
+  * Background: white
 * **Typography**:
   * Headings: [e.g., Inter / Sans-Serif]
   * Body: [e.g., Roboto / System Fonts]
