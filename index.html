@@ -1,581 +1,801 @@
-<!DOCTYPE html><html class="light" lang="en" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>ANIMA MOTORS™ — Concept Portfolio</title>
-<!-- Google Fonts: Space Grotesk & Inter & JetBrains Mono -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
-<!-- Material Symbols Outlined standard vector icon font -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
-<style>
-    @layer base {
-      html, body {
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-      }
-    }
-    ::-webkit-scrollbar {
-      display: none;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, ::before, ::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* Aerodynamic flow stream shimmer effect */
-    @keyframes aero-stream {
-      0% { transform: translateX(-100%) skewX(-20deg); opacity: 0; }
-      40% { opacity: 0.55; }
-      80% { opacity: 0.25; }
-      100% { transform: translateX(250%) skewX(-20deg); opacity: 0; }
-    }
+  <!-- ==========================================================================
+       PRIMARY SEO & META INFORMATION
+       ========================================================================== -->
+  <title>ANIMA MOTORS™ — Early-2000s Performance Car Design Heritage | Concept Homologation</title>
+  <meta name="description" content="ANIMA MOTORS™ is a concept automotive brand reviving early-2000s performance car design heritage through pure analogue dynamics, mechanical engagement, and modern aerodynamics. Digital concept homologation portfolio.">
+  <meta name="author" content="ANIMA MOTORS™">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://animamotors.github.io/">
 
-    .aero-line {
-      position: absolute;
-      height: 1.5px;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
-      animation: aero-stream 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-      pointer-events: none;
-    }
+  <!-- Vector Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-    /* Button sheen wave */
-    .btn-sheen {
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-sheen::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -60%;
-      width: 50%;
-      height: 200%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-      transform: rotate(25deg);
-      transition: none;
-    }
-    .btn-sheen:hover::after {
-      left: 120%;
-      transition: all 0.75s ease-out;
-    }
+  <!-- Open Graph / Facebook Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://animamotors.github.io/">
+  <meta property="og:title" content="ANIMA MOTORS™ — Concept Automotive Portfolio">
+  <meta property="og:description" content="Reviving early-2000s performance car design heritage through pure analogue dynamics and modern aerodynamics.">
+  <meta property="og:image" content="https://animamotors.github.io/images/anima-r1-hero.jpg">
 
-    /* Prototype cross-fade container */
-    .fade-content {
-      transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .fade-out {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-    .fade-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "on-background": "#0a0a0a",
-            "surface-dark": "#0a0a0a",
-            "surface-elevated": "#ffffff",
-            "on-surface-variant": "#4b5563",
-            "on-tertiary-fixed-variant": "#374151",
-            "surface-container": "#f3f4f6",
-            "surface-container-low": "#f8f9fa",
-            "outline-variant": "#e5e7eb",
-            "secondary": "#4b5563",
-            "outline": "#d1d5db",
-            "tertiary-container": "#f3f4f6",
-            "on-tertiary-container": "#1f2937",
-            "primary-fixed": "#111827",
-            "on-primary-fixed-variant": "#374151",
-            "surface-variant": "#f3f4f6",
-            "on-secondary-fixed": "#111827",
-            "secondary-fixed-dim": "#e5e7eb",
-            "surface-dim": "#e5e7eb",
-            "error-container": "#fee2e2",
-            "on-surface": "#0a0a0a",
-            "on-primary": "#ffffff",
-            "surface-container-lowest": "#ffffff",
-            "background": "#ffffff",
-            "on-primary-container": "#1f2937",
-            "error": "#dc2626",
-            "secondary-fixed": "#f3f4f6",
-            "on-secondary-fixed-variant": "#374151",
-            "on-error-container": "#7f1d1d",
-            "inverse-on-surface": "#ffffff",
-            "inverse-surface": "#111827",
-            "primary-fixed-dim": "#374151",
-            "surface-bright": "#ffffff",
-            "accent-velocity": "#0a0a0a",
-            "on-primary-fixed": "#ffffff",
-            "inverse-primary": "#ffffff",
-            "surface-tint": "#0a0a0a",
-            "tertiary": "#374151",
-            "secondary-container": "#f3f4f6",
-            "surface": "#ffffff",
-            "on-error": "#ffffff",
-            "surface-container-high": "#e5e7eb",
-            "primary-container": "#ffffff",
-            "primary": "#0a0a0a",
-            "on-secondary-container": "#374151",
-            "on-tertiary": "#ffffff",
-            "border-subtle": "#e5e7eb",
-            "on-tertiary-fixed": "#111827",
-            "tertiary-fixed": "#f3f4f6",
-            "on-secondary": "#ffffff",
-            "surface-container-highest": "#e5e7eb",
-            "tertiary-fixed-dim": "#d1d5db"
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          spacing: {
-            "space-lg": "32px",
-            "space-sm": "8px",
-            "space-xl": "64px",
-            "space-xs": "4px",
-            "margin": "32px",
-            "space-md": "16px",
-            "gutter": "24px"
-          },
-          fontFamily: {
-            "body-md": ["Inter", "sans-serif"],
-            "label-md": ["Space Grotesk", "sans-serif"],
-            "headline-md": ["Space Grotesk", "sans-serif"],
-            "body-lg": ["Inter", "sans-serif"],
-            "headline-sm": ["Space Grotesk", "sans-serif"],
-            "headline-xl": ["Space Grotesk", "sans-serif"],
-            "body-sm": ["Inter", "sans-serif"],
-            "label-lg": ["Space Grotesk", "sans-serif"],
-            "headline-lg": ["Space Grotesk", "sans-serif"],
-            "headline-lg-mobile": ["Space Grotesk", "sans-serif"],
-            "headline-xl-mobile": ["Space Grotesk", "sans-serif"],
-            "mono": ["JetBrains Mono", "monospace"]
-          },
-          fontSize: {
-            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
-            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
-            "headline-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
-            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
-            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
-            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-            "headline-xl-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.03em", "fontWeight": "700" }]
-          }
-        }
-      }
-    };
-  </script>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://animamotors.github.io/">
+  <meta name="twitter:title" content="ANIMA MOTORS™ — Concept Automotive Portfolio">
+  <meta name="twitter:description" content="Reviving early-2000s performance car design heritage through pure analogue dynamics and modern aerodynamics.">
+  <meta name="twitter:image" content="https://animamotors.github.io/images/anima-r1-hero.jpg">
+
+  <!-- Google Fonts: Space Grotesk (Headings), Inter (Body), JetBrains Mono (Telemetry) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Production Stylesheet (Vanilla CSS with Design Tokens & Zero Render-Blocking JS) -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-white dark:bg-[#0a0a0a] font-body-md text-on-surface dark:text-white antialiased transition-colors duration-300 min-h-screen flex flex-col items-center w-full">
-<!-- FIXED CLEAN TOP NAVIGATION BAR -->
-<header class="fixed top-0 left-0 right-0 w-full z-50 bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur-md border-b border-border-subtle dark:border-white/10 transition-all duration-300" id="main-nav">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-<div class="flex items-center gap-space-xl">
-<a class="group flex items-center gap-3" href="#">
-<img alt="ANIMA MOTORS™ Logo" class="h-7 w-7 inline-block rounded-full object-contain bg-black border border-neutral-800 dark:border-neutral-700 transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr5tBC3UW6Q4aI_VaUK9ti3iIbk6qvnpxClPCHI381uozfvFa6UEtg5pDd8JcdZlSSmrnB_Oc4e8_8wk1b1kj434QbInXQ8CpcXI9K8-vYGcRGAA9XDK9hHJBXl7BE5VglIlEOttHy3K7PtNuLkSk8NfnhfwRzclpU3E0J5NKfStTiAZDhm_tJoZ3qKXOifk_d2nlOO4XhDL0LMzTdsCiO-wJyxnko_rOyUmNFAEGZaeDwAxkcXfn9tESl3ytJOA01Qw">
-<span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface dark:text-white transition-opacity group-hover:opacity-80">ANIMA MOTORS™</span>
-</a>
-</div>
-<div class="flex items-center gap-4">
-<!-- Theme Toggle Button -->
-<button aria-label="Toggle theme mode" class="relative flex items-center justify-between w-[68px] h-[34px] p-[3px] rounded-full border border-neutral-800 dark:border-white/20 bg-neutral-100 dark:bg-[#18181b] cursor-pointer shadow-sm hover:shadow transition-all duration-300 focus:outline-none" id="theme-toggle" onclick="toggleTheme()" type="button">
-<div class="absolute left-[3px] top-[3px] w-[26px] h-[26px] rounded-full bg-black dark:bg-white flex items-center justify-center shadow-md transition-transform duration-300 ease-out dark:translate-x-[34px]" id="theme-toggle-knob"></div>
-<div class="w-[26px] h-[26px] flex items-center justify-center opacity-0 dark:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
-<svg class="w-3.5 h-3.5 text-white fill-none stroke-current stroke-[2]" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-</div>
-<div class="w-[26px] h-[26px] flex items-center justify-center text-black dark:opacity-0 transition-opacity duration-300 pointer-events-none z-10"><svg class="w-3.5 h-3.5 text-black fill-none stroke-current stroke-[2]" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><line stroke-linecap="round" x1="12" x2="12" y1="2" y2="4"></line><line stroke-linecap="round" x1="12" x2="12" y1="20" y2="22"></line><line stroke-linecap="round" x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line stroke-linecap="round" x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line stroke-linecap="round" x1="1" x2="3" y1="12" y2="12"></line><line stroke-linecap="round" x1="21" x2="23" y1="12" y2="12"></line><line stroke-linecap="round" x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line stroke-linecap="round" x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg></div>
-</button>
-</div>
-</div>
-</header>
-<!-- MAIN CONTAINER WITH PROPER TOP CLEARANCE TO PREVENT OVERLAP -->
-<main class="w-full bg-white dark:bg-[#0a0a0a] pt-28 pb-16 transition-colors duration-300 flex-1">
-<div class="flex flex-col w-full mx-auto">
-<!-- SECTION 1: HEADER & TELEMETRY FILTER BAR -->
-<section class="w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-12 bg-white dark:bg-[#0a0a0a] border-b border-border-subtle dark:border-white/10 transition-colors duration-300">
-<div class="max-w-7xl mx-auto flex flex-col gap-6">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-<div class="space-y-2 max-w-2xl">
-<div class="inline-flex items-center gap-2 px-2.5 py-1 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-[11px] font-mono text-neutral-600 dark:text-neutral-400 uppercase tracking-widest mb-1">
-<span class="w-1.5 h-1.5 rounded-full bg-neutral-900 dark:bg-white animate-ping"></span>
-<span class="">PROTOTYPE HOMOLOGATION • ARCHIVE 2000s</span>
-</div>
-<h1 class="font-headline-xl text-3xl sm:text-4xl md:text-5xl lg:text-headline-xl uppercase text-on-surface dark:text-white tracking-tight">CONCEPT PORTFOLIO</h1>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-neutral-400 leading-relaxed pt-1">
-                We are a new automotive brand reviving early-2000s design heritage through high-powered performance vehicles. Currently in the digital concept phase. Seeking partners, funders, and collaborators to make it real. Connect with us via <a class="underline font-medium text-black dark:text-white hover:opacity-75 transition-opacity" href="mailto:animamotorsdrive@gmail.com">animamotorsdrive@gmail.com</a> or DM on Instagram <a class="underline font-medium text-black dark:text-white hover:opacity-75 transition-opacity" href="https://instagram.com/animamotorsdrive" rel="noopener noreferrer" target="_blank">@animamotorsdrive</a>.
-              </p>
-</div>
-<div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 font-label-md text-label-md uppercase">
-<div class="flex items-center gap-2 px-4 py-2 bg-surface-container dark:bg-[#18181b] border border-border-subtle dark:border-white/10 text-on-surface-variant dark:text-neutral-400 font-mono text-xs">
-<span class="w-2 h-2 rounded-full bg-neutral-900 dark:bg-white inline-block animate-pulse"></span>
-<span id="telemetry-clock" class="">LIVE TELEMETRY • 17:06:40 UTC</span>
-</div>
-</div>
-</div>
-<!-- Interactive Prototype Filter Bar -->
-<div class="relative flex flex-wrap items-center gap-2 pt-2" id="filter-bar">
-<button class="filter-btn px-4 py-2 font-label-md text-label-md uppercase tracking-wider transition-all duration-200 border bg-neutral-900 text-white dark:bg-white dark:text-black border-neutral-900 dark:border-white shadow-sm" data-id="all" onclick="selectPrototype('all', this)">Anima R1</button>
 
-</div>
-</div>
-</section>
-<!-- SECTION 2: FLAGSHIP HERO MODEL CARD & SELF-CONTAINED CAR VIEWER -->
-<section class="w-full px-4 sm:px-6 lg:px-8 py-10 lg:py-14 bg-surface-container-low dark:bg-[#121212] model-card border-b border-border-subtle dark:border-white/10 transition-colors duration-300" data-category="hyper-gt" id="showcase-card">
-<div class="max-w-7xl mx-auto bg-white dark:bg-[#18181b] border border-border-subtle dark:border-white/10 p-4 sm:p-6 lg:p-8 shadow-sm transition-colors duration-300">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-<!-- Interactive High-Fidelity Car Viewer Frame -->
-<div class="lg:col-span-7 relative flex flex-col justify-between min-h-[440px] lg:min-h-[520px] bg-black overflow-hidden border border-border-subtle dark:border-white/10 group select-none" id="car-image-container">
-<!-- Visual Viewport Canvas / Shrouded Concept Image -->
-<div class="absolute inset-0 bg-black flex items-center justify-center overflow-hidden">
-<img alt="Anima R1 Concept Shrouded Prototype" class="w-full h-full object-cover object-center transition-all duration-700 ease-out group-hover:scale-105" id="hero-car-image" src="https://lh3.googleusercontent.com/aida/AEtjO1W3GCpQnl5g8D8sqaTY78wIEdfA5hewYuw4e-L2DPVjpJ-9Dm7WE-e3E0lTYQdApy9ZBuCM9CndyfLNiu4oGlW74vEsYI8IgYyAca_vyJ_TF3y04O7Z78Ga7wmpU-zzu0YARoQrj3ZlEkaOYG3xAjOGuwlR1PSu54qMiYT7Uox0PuS0hJDGoo6ArS4xXaOKumSCt36iaAJMt0Q-GP5vgolFAVMOztdEs07LFfsGXw0" style="filter: contrast(1.12) brightness(1); transform: scale(1) translate(0px, 0px);">
-</div>
-<!-- Aero Streamlines Overlay Animation -->
-<div class="aero-line top-1/4 left-0 w-3/4" style="animation-delay: 0s;"></div>
-<div class="aero-line top-1/2 left-0 w-full" style="animation-delay: 1.6s;"></div>
-<div class="aero-line top-3/4 left-0 w-2/3" style="animation-delay: 3s;"></div>
-<!-- Subtle Ambient Radial Vignette and Glow -->
-<div class="absolute inset-0 bg-radial-gradient pointer-events-none" style="background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.65) 100%);"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-black/60 pointer-events-none"></div>
-<!-- Top Overlay HUD Tags & Live Telemetry Badges -->
-<div class="relative z-10 p-4 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-<div class="flex items-center gap-2 bg-black/85 backdrop-blur-md px-3 py-1.5 border border-white/20 text-[11px] font-mono uppercase tracking-wider text-white">
-<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-<span id="badge-drag" class="">DRAG COEFF: 0.218 CD</span>
-</div>
-<div class="flex items-center gap-2">
-<div class="bg-black/85 backdrop-blur-md px-3 py-1.5 border border-white/20 text-[11px] font-mono uppercase tracking-wider text-neutral-300">
-<span id="badge-weight" class="">WEIGHT DIST: 50:50</span>
-</div>
-<div class="bg-black/85 backdrop-blur-md px-3 py-1.5 border border-white/20 text-[11px] font-mono uppercase tracking-wider text-neutral-300">
-<span id="badge-aero" class="">AERO: OPTIMAL</span>
-</div>
-</div>
-</div>
-<!-- Bottom Angle Selector Chips & Interactive View Controls -->
-<div class="relative z-10 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-gradient-to-t from-black via-black/80 to-transparent pt-8">
-<!-- Angle Selector Chips -->
-<div class="flex items-center gap-1.5 bg-black/90 backdrop-blur-md p-1 border border-white/20">
-<button class="angle-btn px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider transition-all duration-200 text-neutral-400" data-angle="front" onclick="switchAngle('front', this)">Front 3/4</button>
-<button class="angle-btn px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider hover:text-white transition-all duration-200 text-neutral-400" data-angle="side" onclick="switchAngle('side', this)">Side Profile</button>
-<button class="angle-btn px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider hover:text-white transition-all duration-200 bg-white text-black font-semibold" data-angle="rear" onclick="switchAngle('rear', this)">Rear Aero</button>
-<button class="angle-btn px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider hover:text-white transition-all duration-200 text-neutral-400" data-angle="top" onclick="switchAngle('top', this)">Top Down</button>
-</div>
-<!-- Angle indicator and Fullscreen Preview button -->
-<div class="flex items-center gap-2 text-white/80 font-mono text-[11px] uppercase tracking-wider">
-<span class="hidden sm:inline text-[10px] text-neutral-400" id="scrub-label">PERSPECTIVE: REAR AERO</span>
-<button class="p-1.5 bg-black/80 hover:bg-neutral-800 text-white border border-white/20 transition-colors flex items-center justify-center" onclick="toggleFullscreenViewer()" title="Full-screen preview">
-<span class="material-symbols-outlined text-base">view_in_ar</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Technical Telemetry & Specifications Details Pane -->
-<div class="lg:col-span-5 flex flex-col justify-between space-y-6 fade-content fade-in" id="details-pane">
-<div class="space-y-3">
-<div class="text-[11px] font-mono text-neutral-500 dark:text-neutral-400 uppercase tracking-widest" id="proto-code">PROGRAM CODE: ANM-01-RWD</div>
-<h2 class="font-headline-lg text-2xl sm:text-3xl lg:text-headline-lg uppercase text-on-surface dark:text-white leading-none tracking-tight" id="proto-title">ANIMA R1 CONCEPT</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-neutral-400 pt-1 leading-relaxed" id="proto-desc">The Anima R1 RWD is a rear-wheel-drive sports sedan powered by Anima Apex-4 (OEM: Mercedes-AMG M139) engine core. Engineered with a longitudinal powertrain layout, traditional 6-speed H-pattern manual transmission, and lightweight chassis dynamics, the R1 delivers supercar-grade performance in a focused, high-rigidity package.</p>
-</div>
-<!-- Key Metrics Grid with Live Count-Up and Border Glow -->
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-2">
-<div class="group p-3 bg-surface-container-low dark:bg-[#1f242d] border border-border-subtle dark:border-white/10 hover:border-black dark:hover:border-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm">
-<span class="block font-label-md text-label-md uppercase text-on-surface-variant dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">0-100 km/h</span>
-<span class="font-headline-sm text-headline-sm uppercase text-on-surface dark:text-white font-semibold font-mono tracking-tight"><span class="metric-val" data-decimals="1" data-target="3.9">3.9</span> <span class="text-on-surface-variant dark:text-neutral-400 text-label-md font-sans">SEC</span></span>
-</div>
-<div class="group p-3 bg-surface-container-low dark:bg-[#1f242d] border border-border-subtle dark:border-white/10 hover:border-black dark:hover:border-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm">
-<span class="block font-label-md text-label-md uppercase text-on-surface-variant dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">TOP VELOCITY</span>
-<span class="font-headline-sm text-headline-sm uppercase text-on-surface dark:text-white font-semibold font-mono tracking-tight"><span class="metric-val" data-decimals="0" data-target="270">270</span> <span class="text-on-surface-variant dark:text-neutral-400 text-label-md font-sans">km/h</span></span>
-</div>
-<div class="group p-3 bg-surface-container-low dark:bg-[#1f242d] border border-border-subtle dark:border-white/10 hover:border-black dark:hover:border-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm">
-<span class="block font-label-md text-label-md uppercase text-on-surface-variant dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">max power</span>
-<span class="font-headline-sm text-headline-sm uppercase text-on-surface dark:text-white font-semibold font-mono tracking-tight"><span class="metric-val" data-decimals="0" data-target="421">421</span> <span class="text-on-surface-variant dark:text-neutral-400 text-label-md font-sans">bhP</span></span>
-</div>
-<div class="group p-3 bg-surface-container-low dark:bg-[#1f242d] border border-border-subtle dark:border-white/10 hover:border-black dark:hover:border-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm">
-<span class="block font-label-md text-label-md uppercase text-on-surface-variant dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">highway mileage</span>
-<span class="font-headline-sm text-headline-sm uppercase text-on-surface dark:text-white font-semibold font-mono tracking-tight"><span class="metric-val" data-decimals="1" data-target="13.2">13.2</span> <span class="text-on-surface-variant dark:text-neutral-400 text-label-md font-sans">KM/L</span></span>
-</div>
-<div class="group p-3 bg-surface-container-low dark:bg-[#1f242d] border border-border-subtle dark:border-white/10 hover:border-black dark:hover:border-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm">
-<span class="block font-label-md text-label-md uppercase text-on-surface-variant dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">torque</span>
-<span class="font-headline-sm text-headline-sm uppercase text-on-surface dark:text-white font-semibold font-mono tracking-tight"><span class="metric-val" data-decimals="0" data-target="500">500</span> <span class="text-on-surface-variant dark:text-neutral-400 text-label-md font-sans">nm</span></span>
-</div>
-<div class="group p-3 bg-surface-container-low dark:bg-[#1f242d] border border-border-subtle dark:border-white/10 hover:border-black dark:hover:border-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm">
-<span class="block font-label-md text-label-md uppercase text-on-surface-variant dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">starting PRICE</span>
-<span class="font-headline-sm text-headline-sm uppercase text-on-surface dark:text-white font-semibold block leading-tight font-mono" id="proto-price">₹22,49,999</span>
-<span class="block text-[10px] text-on-surface-variant dark:text-neutral-400 uppercase tracking-wider">ex-showroom</span>
-</div>
-</div>
-<!-- CTA Button with Material Symbol -->
-<div class="flex flex-col sm:flex-row items-stretch gap-3 pt-3">
-<a class="group btn-sheen flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 font-label-md text-label-md uppercase tracking-wider bg-black dark:bg-white text-white dark:text-black hover:opacity-95 active:scale-[0.98] transition-all shadow-sm" href="mailto:animamotorsdrive@gmail.com?subject=Anima%20R1%20Detailed%20Specification%20Inquiry">
-<span class="">detailed specification</span>
-<span class="material-symbols-outlined text-lg transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-</main>
-<!-- FOOTER -->
-<footer class="w-full bg-surface-container-low dark:bg-[#121212] border-t border-border-subtle dark:border-white/10 transition-colors duration-300">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
-<div class="lg:col-span-3 flex flex-col justify-between pr-4 sm:pr-8">
-<div class="space-y-4">
-<div class="flex items-center gap-3">
-<img alt="ANIMA MOTORS™ Logo" class="h-7 w-7 inline-block rounded-full object-contain bg-black border border-neutral-800 dark:border-neutral-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7tjL9Zfzs4xVXwDheLOhNZPhu8pFj53R73j11g_oFxgiKr0XeUeIOfF6gkjgtxI7zxrhNtJXzlZLueM3cv-UbqvVu2yFGEdLsmZ3qq1qoIj5CKajyzwSf1z832APTfu4Nbndt-Mb6UImku03xEKa8k4I5uS839up6b_IFRwwJWlQCDIxC_prr5QGUJakicvZcGBGrK8kTipWhn6wbqNp2jtxV45_5tGRPq3pDu3I5WphJmSOSnqNKDZWRicaSr0V11A">
-<span class="font-headline-md text-xl md:text-headline-md uppercase tracking-wider text-on-surface dark:text-white">ANIMA MOTORS™</span>
-</div>
-<p class="font-body-sm text-neutral-500 dark:text-neutral-400 max-w-lg leading-relaxed">
-              The models, specifications, and designs displayed on this website are currently 3D digital concepts and do not represent production vehicles. We are actively seeking engineering, manufacturing, and investment partners to bring these designs to reality.
+<body>
+  <!-- ==========================================================================
+       NAVIGATION BAR & LIVE TELEMETRY HUD
+       ========================================================================== -->
+  <header class="navbar" id="main-navbar">
+    <!-- Top Row: Corporate Brand Identity (Left) | Mobile Controls (Right) -->
+    <div class="nav-top-row">
+      <div class="container nav-top-container">
+        <a href="#hero" class="brand-link" aria-label="ANIMA MOTORS Homepage">
+          <img src="images/logo.webp" alt="ANIMA MOTORS™ Emblem" class="brand-logo-img" width="34" height="34" loading="eager">
+          <span class="brand-name">ANIMA MOTORS™</span>
+        </a>
+
+        <!-- Mobile Header Controls -->
+        <div class="nav-mobile-actions">
+          <button type="button" class="theme-switch mobile-theme-switch" id="theme-toggle-mobile" aria-label="Toggle visual theme mode" role="switch" aria-checked="true">
+            <div class="theme-knob"></div>
+            <div class="theme-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </div>
+            <div class="theme-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="12" y1="2" x2="12" y2="4"></line>
+                <line x1="12" y1="20" x2="12" y2="22"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </div>
+          </button>
+
+          <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thin Horizontal Divider Line Under Top Row -->
+    <div class="nav-divider" aria-hidden="true"></div>
+
+    <!-- Bottom Row (Desktop): Navigation Links on Left, Theme Toggle on Right -->
+    <div class="nav-bottom-row">
+      <div class="container nav-bottom-container">
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="#hero" class="nav-link">Overview</a></li>
+            <li><a href="#showcase" class="nav-link">Anima R1</a></li>
+            <li><a href="#specs" class="nav-link">Specs</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#story" class="nav-link">Our Story</a></li>
+            <li><a href="#partners" class="nav-link">Partnerships</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-desktop-actions">
+          <button type="button" class="theme-switch" id="theme-toggle" aria-label="Toggle visual theme mode" role="switch" aria-checked="true">
+            <div class="theme-knob"></div>
+            <div class="theme-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </div>
+            <div class="theme-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="12" y1="2" x2="12" y2="4"></line>
+                <line x1="12" y1="20" x2="12" y2="22"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Full-Screen Overlay Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-inner">
+      <nav aria-label="Mobile Navigation Links">
+        <ul class="mobile-nav-list">
+          <li><a href="#hero" class="mobile-nav-link">Overview</a></li>
+          <li><a href="#showcase" class="mobile-nav-link">Anima R1 Architecture</a></li>
+          <li><a href="#specs" class="mobile-nav-link">Technical Specs</a></li>
+          <li><a href="#gallery" class="mobile-nav-link">Multi-Angle Gallery</a></li>
+          <li><a href="#story" class="mobile-nav-link">Our Story &amp; Heritage</a></li>
+          <li><a href="#partners" class="mobile-nav-link">Partner Directory</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Contact &amp; Telemetry</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="#contact" class="btn btn-primary btn-sheen" style="width: 100%;">
+          <span>Partner With Us</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1: FULL-VIEWPORT HERO VIDEO (Corporate Luxury Magazine Layout)
+         ========================================================================== -->
+    <section class="hero-section" id="hero" aria-label="Hero Concept Portfolio">
+      <!-- Background Video and Poster Fallback Layer -->
+      <div class="hero-media-container">
+        <video
+          class="hero-video"
+          id="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="assets/images/hero-poster.jpg"
+          aria-hidden="true"
+          tabindex="-1"
+        >
+          <source src="assets/video/hero.webm" type="video/webm">
+          <source src="assets/video/hero.mp4" type="video/mp4">
+          <!-- Fallback image element for older browsers -->
+          <img src="assets/images/hero-poster.jpg" alt="ANIMA R1 Digital Concept Homologation" class="hero-fallback-img">
+        </video>
+        <!-- Dark gradient overlays: stronger at bottom and top for flawless readability -->
+        <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      </div>
+
+      <!-- Hero Bottom-Left Magazine Content -->
+      <div class="container hero-content-wrapper">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            <span>CONCEPT PORTFOLIO</span>
+          </div>
+
+          <h1 class="hero-headline">
+            <span class="hero-headline-bold">REVIVING THE RAW SOUL</span>
+            <span class="hero-headline-light">OF PERFORMANCE.</span>
+          </h1>
+
+          <p class="hero-description">
+            ANIMA MOTORS™ is an independent concept automotive brand engineered to revive the unfiltered mechanical engagement of early-2000s homologation performance cars. Driven by analogue dynamics, longitudinal rear-wheel drive, and modern aerodynamics.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary btn-sheen">
+              <span>PARTNER WITH US</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="3" y1="8" x2="13" y2="8"></line>
+                <polyline points="9 4 13 8 9 12"></polyline>
+              </svg>
+            </a>
+            <a href="#specs" class="btn btn-outline">
+              <span>EXPLORE TECHNICAL SPECS</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="3" y1="8" x2="13" y2="8"></line>
+                <polyline points="9 4 13 8 9 12"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Center: Animated Scroll Down Cue -->
+      <a href="#showcase" class="hero-scroll-cue" aria-label="Scroll down to Anima R1 Architecture">
+        <span class="scroll-cue-text">SCROLL</span>
+        <span class="scroll-cue-pill">
+          <span class="scroll-cue-wheel"></span>
+        </span>
+      </a>
+
+      <!-- Bottom Right: Accessible Round Video Pause/Play Button -->
+      <div class="hero-video-controls">
+        <button
+          type="button"
+          class="video-toggle-btn"
+          id="hero-video-toggle"
+          aria-label="Pause background video"
+          title="Pause background video"
+        >
+          <!-- Pause Icon (visible when playing) -->
+          <svg class="video-icon video-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="6" y="5" width="4" height="14" rx="1"></rect>
+            <rect x="14" y="5" width="4" height="14" rx="1"></rect>
+          </svg>
+          <!-- Play Icon (visible when paused) -->
+          <svg class="video-icon video-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="6,4 20,12 6,20"></polygon>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: ANIMA R1 FLAGSHIP SHOWCASE
+         ========================================================================== -->
+    <section class="section" id="showcase">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">FLAGSHIP ARCHITECTURE</div>
+          <h2 class="section-title">ANIMA R1 SPORTS SEDAN</h2>
+          <p class="section-subtitle">
+            A purist high-performance machine calibrated to eliminate synthetic driving filters while integrating contemporary structural aerodynamics.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- Overview Card -->
+          <div class="showcase-card reveal-on-scroll">
+            <h3 style="font-size: 1.45rem; margin-bottom: 12px; color: var(--text-main);">
+              ENGINEERING BRIEFS &amp; CHASSIS ARCHITECTURE
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+              The Anima R1 RWD is a rear-wheel-drive sports sedan powered by Anima Apex-4 (OEM: Mercedes-AMG M139) engine core. Engineered with a longitudinal powertrain layout, traditional 6-speed H-pattern manual transmission, and lightweight chassis dynamics, the R1 delivers supercar-grade performance in a focused, high-rigidity package.
             </p>
-</div>
-</div>
-<div class="lg:col-span-2 space-y-4">
-<span class="font-label-md text-label-md uppercase tracking-wider text-black dark:text-white font-semibold">Contact &amp; Inquiries</span>
-<ul class="space-y-3 text-sm">
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-base text-neutral-500 dark:text-neutral-400">mail</span>
-<a class="font-mono text-xs text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors underline" href="mailto:animamotorsdrive@gmail.com">animamotorsdrive@gmail.com</a>
-</li>
-<li class="flex items-center gap-2">
-<svg aria-hidden="true" class="w-4 h-4 text-neutral-500 dark:text-neutral-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-<a class="font-mono text-xs text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors underline" href="https://instagram.com/animamotorsdrive" rel="noopener noreferrer" target="_blank">@animamotorsdrive</a>
-</li>
-</ul>
-</div>
-</div>
-<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border-subtle dark:border-white/10">
-<span class="font-label-md text-label-md text-on-surface-variant dark:text-neutral-400 uppercase">© 2026 ANIMA MOTORS™. ALL RIGHTS RESERVED.</span>
-</div>
-</div>
-</footer>
-<!-- STANDALONE LOGIC -->
-<script>
-    // Prototypes dataset
-    const prototypes = {
-      all: {
-        code: "PROGRAM CODE: ANM-01-RWD",
-        title: "ANIMA R1 CONCEPT",
-        desc: "The Anima R1 RWD is a rear-wheel-drive sports sedan powered by Anima Apex-4 (OEM: Mercedes-AMG M139) engine core. Engineered with a longitudinal powertrain layout, traditional 6-speed H-pattern manual transmission, and lightweight chassis dynamics, the R1 delivers supercar-grade performance in a focused, high-rigidity package.",
-        price: "₹22,49,999",
-        metrics: [3.9, 270, 421, 13.2, 500],
-        drag: "0.218 CD",
-        weight: "50:50",
-        aero: "OPTIMAL"
-      },
-      r1: {
-        code: "PROGRAM CODE: ANM-R1-APEX",
-        title: "ANIMA R1 SPORTS SEDAN",
-        desc: "Production prototype configuration featuring hand-built 2.0L twin-scroll turbocharged engine with forged internals, 7,200 RPM redline, and bespoke mechanical limited-slip differential. Pure tactile feedback with zero synthetic driving filters.",
-        price: "₹24,90,000",
-        metrics: [3.8, 275, 430, 12.8, 510],
-        drag: "0.216 CD",
-        weight: "50:50",
-        aero: "STAGE 1 HIGH-DOWNFORCE"
-      }
-    };
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              Designed from first principles to prioritize mechanical steering feel, progressive breakaway characteristics at the limit, and an unmistakable early-2000s low-slung beltline silhouette.
+            </p>
 
-    // Live number count-up animation
-    function animateCounters() {
-      const metricEls = document.querySelectorAll('.metric-val');
-      metricEls.forEach(el => {
-        const target = parseFloat(el.getAttribute('data-target'));
-        const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
-        const duration = 700;
-        const startTime = performance.now();
-        const startVal = 0;
+            <div style="margin-top: 30px;">
+              <a href="#contact" class="btn btn-secondary btn-sheen">
+                <span>Request Technical Dossier</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
 
-        function update(now) {
-          const elapsed = now - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easeOut = 1 - Math.pow(1 - progress, 3);
-          const current = startVal + (target - startVal) * easeOut;
-          el.textContent = current.toFixed(decimals);
+          <!-- Technical Spec Breakdown Checklist -->
+          <div class="showcase-card reveal-on-scroll">
+            <div class="section-tag" style="margin-bottom: 16px;">HOMOLOGATION PARAMETERS</div>
+            <div class="tech-spec-list">
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Engine Core</span>
+                <span class="tech-spec-val">Anima Apex-4 (OEM: Mercedes-AMG M139)</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Powertrain Layout</span>
+                <span class="tech-spec-val">Longitudinal Front-Mid / RWD</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Transmission</span>
+                <span class="tech-spec-val">6-Speed Close-Ratio H-Pattern Manual</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Differential</span>
+                <span class="tech-spec-val">Mechanical Limited-Slip (1.5-Way)</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Chassis Balance</span>
+                <span class="tech-spec-val">50:50 Static Weight Distribution</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Aerodynamic Drag</span>
+                <span class="tech-spec-val">0.218 Cd Optimized Venturi Tunnel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          if (progress < 1) {
-            requestAnimationFrame(update);
-          } else {
-            el.textContent = target.toFixed(decimals);
-          }
-        }
-        requestAnimationFrame(update);
-      });
-    }
+    <!-- ==========================================================================
+         SECTION 3: ANIMATED PERFORMANCE SPECS MATRIX
+         ========================================================================== -->
+    <section class="section" id="specs" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">TELEMETRY BENCHMARK</div>
+          <h2 class="section-title">CALIBRATED PERFORMANCE METRICS</h2>
+          <p class="section-subtitle">
+            Exact dyno and wind-tunnel telemetry target figures for the Anima R1 prototype homologation program.
+          </p>
+        </div>
 
-    // Prototype tab selection
-    function selectPrototype(key, buttonEl) {
-      const allBtns = document.querySelectorAll('.filter-btn');
-      allBtns.forEach(btn => {
-        btn.classList.remove('bg-neutral-900', 'text-white', 'dark:bg-white', 'dark:text-black', 'border-neutral-900', 'dark:border-white', 'shadow-sm');
-        btn.classList.add('border-border-subtle', 'dark:border-white/10', 'text-on-surface-variant', 'dark:text-neutral-400');
-      });
+        <!-- 6 Animated Stat Counter Tiles (Numbers Count Up Into View) -->
+        <div class="specs-grid" id="specs-matrix">
+          <!-- Metric 1: 0-100 km/h -->
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">0-100 KM/H</span>
+            <div class="spec-tile-value">
+              <span class="stat-counter" data-target="3.9" data-decimals="1">0.0</span>
+              <span class="spec-tile-unit">SEC</span>
+            </div>
+            <span class="spec-tile-subtext">Acceleration</span>
+          </div>
 
-      buttonEl.classList.remove('border-border-subtle', 'dark:border-white/10', 'text-on-surface-variant', 'dark:text-neutral-400');
-      buttonEl.classList.add('bg-neutral-900', 'text-white', 'dark:bg-white', 'dark:text-black', 'border-neutral-900', 'dark:border-white', 'shadow-sm');
+          <!-- Metric 2: Top Velocity -->
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">TOP VELOCITY</span>
+            <div class="spec-tile-value">
+              <span class="stat-counter" data-target="270" data-decimals="0">0</span>
+              <span class="spec-tile-unit">KM/H</span>
+            </div>
+            <span class="spec-tile-subtext">Terminal Speed</span>
+          </div>
 
-      const data = prototypes[key] || prototypes['all'];
-      const pane = document.getElementById('details-pane');
-      
-      pane.classList.add('fade-out');
-      setTimeout(() => {
-        document.getElementById('proto-code').textContent = data.code;
-        document.getElementById('proto-title').textContent = data.title;
-        document.getElementById('proto-desc').textContent = data.desc;
-        document.getElementById('proto-price').textContent = data.price;
-        
-        document.getElementById('badge-drag').textContent = 'DRAG COEFF: ' + data.drag;
-        document.getElementById('badge-weight').textContent = 'WEIGHT DIST: ' + data.weight;
-        document.getElementById('badge-aero').textContent = 'AERO: ' + data.aero;
+          <!-- Metric 3: Max Power -->
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">MAX POWER</span>
+            <div class="spec-tile-value">
+              <span class="stat-counter" data-target="421" data-decimals="0">0</span>
+              <span class="spec-tile-unit">BHP</span>
+            </div>
+            <span class="spec-tile-subtext">Turbocharged Output</span>
+          </div>
 
-        const metricEls = document.querySelectorAll('.metric-val');
-        if (metricEls.length >= 5) {
-          metricEls[0].setAttribute('data-target', data.metrics[0]);
-          metricEls[1].setAttribute('data-target', data.metrics[1]);
-          metricEls[2].setAttribute('data-target', data.metrics[2]);
-          metricEls[3].setAttribute('data-target', data.metrics[3]);
-          metricEls[4].setAttribute('data-target', data.metrics[4]);
-        }
+          <!-- Metric 4: Torque -->
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">TORQUE</span>
+            <div class="spec-tile-value">
+              <span class="stat-counter" data-target="500" data-decimals="0">0</span>
+              <span class="spec-tile-unit">NM</span>
+            </div>
+            <span class="spec-tile-subtext">Peak Rotational Force</span>
+          </div>
 
-        animateCounters();
-        pane.classList.remove('fade-out');
-        pane.classList.add('fade-in');
-      }, 180);
-    }
+          <!-- Metric 5: Highway Mileage -->
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">HIGHWAY MILEAGE</span>
+            <div class="spec-tile-value">
+              <span class="stat-counter" data-target="13.2" data-decimals="1">0.0</span>
+              <span class="spec-tile-unit">KM/L</span>
+            </div>
+            <span class="spec-tile-subtext">Cruising Efficiency</span>
+          </div>
 
-    // Angle Selector Chips Simulation
-    function switchAngle(angle, btn) {
-      const buttons = document.querySelectorAll('.angle-btn');
-      buttons.forEach(b => {
-        b.classList.remove('bg-white', 'text-black', 'font-semibold');
-        b.classList.add('text-neutral-400');
-      });
-      btn.classList.remove('text-neutral-400');
-      btn.classList.add('bg-white', 'text-black', 'font-semibold');
+          <!-- Metric 6: Starting Price -->
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">STARTING PRICE</span>
+            <div class="spec-tile-value" style="font-size: 1.35rem;">
+              <span>₹22,49,999</span>
+            </div>
+            <span class="spec-tile-subtext">Ex-Showroom Projected</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      const carImg = document.getElementById('hero-car-image');
-      const label = document.getElementById('scrub-label');
-      
-      if (angle === 'front') {
-        carImg.style.transform = 'scale(1.0) translate(0px, 0px)';
-        carImg.style.filter = 'contrast(1.1) brightness(1.02)';
-        if (label) label.textContent = 'PERSPECTIVE: FRONT 3/4';
-      } else if (angle === 'side') {
-        carImg.style.transform = 'scale(1.08) translateX(2%)';
-        carImg.style.filter = 'contrast(1.15) brightness(1.05)';
-        if (label) label.textContent = 'PERSPECTIVE: SIDE PROFILE';
-      } else if (angle === 'rear') {
-        carImg.style.transform = 'scale(1.08) translateX(-2%)';
-        carImg.style.filter = 'contrast(1.12) brightness(1.0)';
-        if (label) label.textContent = 'PERSPECTIVE: REAR AERO';
-      } else if (angle === 'top') {
-        carImg.style.transform = 'scale(1.14) translateY(3%)';
-        carImg.style.filter = 'contrast(1.2) brightness(1.08)';
-        if (label) label.textContent = 'PERSPECTIVE: TOP DOWN';
-      }
-    }
+    <!-- ==========================================================================
+         SECTION 4: INTERACTIVE MULTI-ANGLE GALLERY SLIDER
+         ========================================================================== -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">AERODYNAMIC DESIGN STUDY</div>
+          <h2 class="section-title">MULTI-ANGLE VISUAL MATRIX</h2>
+          <p class="section-subtitle">
+            Inspect the sculpted surfacing, functional aerodynamics, and proportions of the Anima R1 across all key angles. Touch swipe and keyboard arrow keys supported.
+          </p>
+        </div>
 
-    // Fullscreen toggle for car viewer
-    function toggleFullscreenViewer() {
-      const viewer = document.getElementById('car-image-container');
-      if (!document.fullscreenElement) {
-        if (viewer.requestFullscreen) {
-          viewer.requestFullscreen();
-        } else if (viewer.webkitRequestFullscreen) {
-          viewer.webkitRequestFullscreen();
-        }
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-      }
-    }
+        <div class="gallery-wrapper reveal-on-scroll">
+          <!-- Main Carousel Viewport -->
+          <div class="slider-container" id="car-gallery-slider" aria-label="Interactive Car Angle Gallery">
+            <!-- Slide 1: Front 3/4 -->
+            <div class="slide active">
+              <img 
+                src="images/anima-r1-front.webp" 
+                alt="Front three-quarter view of the Anima R1 in wind-tunnel testing studio with illuminated quad projector headlights and aggressive splitter" 
+                class="slide-image"
+                width="1376" 
+                height="768" 
+                loading="lazy"
+              >
+            </div>
 
-    // Interactive mouse pan / micro-tilt on car image
-    const carContainer = document.getElementById('car-image-container');
-    const heroCarImg = document.getElementById('hero-car-image');
+            <!-- Slide 2: Side Profile -->
+            <div class="slide">
+              <img 
+                src="images/anima-r1-side.webp" 
+                alt="Dramatic side profile studio shot of Anima R1 homologation sports sedan showing long hood and forged monoblock wheels" 
+                class="slide-image"
+                width="1376" 
+                height="768" 
+                loading="lazy"
+              >
+            </div>
 
-    if (carContainer && heroCarImg) {
-      carContainer.addEventListener('mousemove', (e) => {
-        const rect = carContainer.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        heroCarImg.style.transform = `scale(1.04) translate(${x * -16}px, ${y * -12}px)`;
-      });
+            <!-- Slide 3: Rear Aero -->
+            <div class="slide">
+              <img 
+                src="images/anima-r1-rear.webp" 
+                alt="Rear three-quarter view of Anima R1 showing functional carbon fiber diffuser, quad titanium exhausts and integrated spoiler" 
+                class="slide-image"
+                width="1376" 
+                height="768" 
+                loading="lazy"
+              >
+            </div>
 
-      carContainer.addEventListener('mouseleave', () => {
-        heroCarImg.style.transform = 'scale(1.0) translate(0px, 0px)';
-      });
-    }
+            <!-- Slide 4: Top-Down Aero View -->
+            <div class="slide">
+              <img 
+                src="images/anima-r1-top.webp" 
+                alt="Top-down bird's-eye wind tunnel view of Anima R1 sports sedan showcasing wide body contours, double-bubble roof and aerodynamic flow lines" 
+                class="slide-image"
+                width="1376" 
+                height="768" 
+                loading="lazy"
+              >
+            </div>
 
-    // Theme Toggle Functionality
-    function toggleTheme() {
-      const html = document.documentElement;
-      const isDark = html.classList.toggle('dark');
-      if (isDark) {
-        html.classList.remove('light');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        html.classList.add('light');
-        localStorage.setItem('theme', 'light');
-      }
-    }
+            <!-- Slider Arrows -->
+            <div class="slider-controls">
+              <button type="button" class="slider-btn" id="gallery-prev-btn" aria-label="Previous Perspective">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button type="button" class="slider-btn" id="gallery-next-btn" aria-label="Next Perspective">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
 
-    // Check system or saved preference
-    (function initTheme() {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
-      } else {
-        document.documentElement.classList.remove('dark');
-        document.documentElement.classList.add('light');
-      }
-    })();
+            <!-- Dynamic Perspective HUD Label -->
+            <div class="slider-hud">
+              <div class="hud-badge" id="gallery-perspective-label">
+                PERSPECTIVE 01 // FRONT 3/4 WIND-TUNNEL
+              </div>
+              <div class="hud-badge" style="font-size: 0.7rem;">
+                USE ARROW KEYS OR SWIPE
+              </div>
+            </div>
+          </div>
 
-    // Sticky nav frosted shadow on scroll
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('main-nav');
-      if (window.scrollY > 20) {
-        nav.classList.add('shadow-md');
-      } else {
-        nav.classList.remove('shadow-md');
-      }
-    });
+          <!-- Thumbnail Selectors Row -->
+          <div class="gallery-thumbs" role="tablist" aria-label="Gallery Perspectives">
+            <button type="button" class="gallery-thumb-btn active" data-index="0" role="tab" aria-selected="true">
+              <span class="thumb-angle">Front 3/4</span>
+              <span class="thumb-sub">Wind Tunnel</span>
+            </button>
+            <button type="button" class="gallery-thumb-btn" data-index="1" role="tab" aria-selected="false">
+              <span class="thumb-angle">Side Profile</span>
+              <span class="thumb-sub">Homologation</span>
+            </button>
+            <button type="button" class="gallery-thumb-btn" data-index="2" role="tab" aria-selected="false">
+              <span class="thumb-angle">Rear Aero</span>
+              <span class="thumb-sub">Diffuser &amp; Exhaust</span>
+            </button>
+            <button type="button" class="gallery-thumb-btn" data-index="3" role="tab" aria-selected="false">
+              <span class="thumb-angle">Top Down</span>
+              <span class="thumb-sub">Aero Dynamics</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    // Initialize telemetry clock and count-up on load
-    document.addEventListener('DOMContentLoaded', () => {
-      animateCounters();
-      
-      setInterval(() => {
-        const clockEl = document.getElementById('telemetry-clock');
-        if (clockEl) {
-          const now = new Date();
-          const utc = now.toUTCString().slice(17, 25);
-          clockEl.textContent = `LIVE TELEMETRY • ${utc} UTC`;
-        }
-      }, 1000);
-    });
-  </script>
+    <!-- ==========================================================================
+         SECTION 5: OUR STORY & EARLY-2000s HERITAGE
+         ========================================================================== -->
+    <section class="section" id="story">
+      <div class="container">
+        <div class="story-grid">
+          <div class="reveal-on-scroll">
+            <div class="section-tag">ORIGIN &amp; PHILOSOPHY</div>
+            <h2 class="section-title">THE ANALOGUE SOUL OF MOTORSPORT</h2>
+            <p class="story-lead">
+              The early 2000s marked the pinnacle of driver-centric sports cars — an era of unfiltered mechanical feedback, balanced hydraulic steering racks, and pure communion between driver, transmission, and tarmac.
+            </p>
+            <p class="story-body">
+              Over the last two decades, performance motoring has become increasingly digitized, isolated behind synthetic drive-by-wire layers, electronic intervention systems, and excessive battery mass.
+            </p>
+            <p class="story-body">
+              ANIMA MOTORS™ was founded on a singular conviction: drivers crave tactile mechanical emotion. By uniting the visceral engagement of early-2000s Japanese and European GT homologation specials with modern carbon composite engineering, the Anima R1 re-establishes what a true driver's car should feel like.
+            </p>
 
+            <div class="story-pillar-grid">
+              <div class="story-pillar">
+                <div class="pillar-num">01 // TACTILE</div>
+                <div class="pillar-title">6-Speed Manual</div>
+                <div class="pillar-desc">Mechanical linkage, physical H-pattern gate, and weighted knob with zero artificial rev-hang.</div>
+              </div>
+              <div class="story-pillar">
+                <div class="pillar-num">02 // BALANCE</div>
+                <div class="pillar-title">50:50 Dynamic Mass</div>
+                <div class="pillar-desc">Longitudinal front-mid engine layout for predictable, knife-edge yaw response at the limit.</div>
+              </div>
+              <div class="story-pillar">
+                <div class="pillar-num">03 // GRIP</div>
+                <div class="pillar-title">Mechanical LSD</div>
+                <div class="pillar-desc">Clutch-type limited slip differential providing honest, progressive power transfer without electronic brake pulsing.</div>
+              </div>
+              <div class="story-pillar">
+                <div class="pillar-num">04 // AERO</div>
+                <div class="pillar-title">Venturi Channels</div>
+                <div class="pillar-desc">True ground-effect underfloor aerodynamics generating high-speed downforce with minimal drag penalty.</div>
+              </div>
+            </div>
+          </div>
 
-</body></html>
+          <!-- Studio Heritage Visual -->
+          <div class="reveal-on-scroll" style="position: relative;">
+            <div style="border: 1px solid var(--border-medium); background: #000; overflow: hidden; aspect-ratio: 4 / 3;">
+              <img 
+                src="images/atelier-studio.webp" 
+                alt="Automotive design atelier studio with carbon fiber panels and technical layout" 
+                width="1024" 
+                height="768" 
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85; filter: contrast(1.15);"
+                loading="lazy"
+              >
+            </div>
+            <div class="hud-badge" style="position: absolute; bottom: 20px; left: 20px;">
+              <span>ATELIER BRIEF // DESIGNED FOR THE PURIST</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6: PARTNER WITH US (INVESTORS, ENGINEERS, MANUFACTURERS)
+         ========================================================================== -->
+    <section class="section" id="partners" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">COLLABORATION DIRECTORY</div>
+          <h2 class="section-title">BRINGING THE CONCEPT TO REALITY</h2>
+          <p class="section-subtitle">
+            ANIMA MOTORS™ is currently in the digital concept and prototype homologation phase. We are assembling an alliance of world-class engineers, technical suppliers, and capital partners to manufacture our vision.
+          </p>
+        </div>
+
+        <div class="partner-card-grid">
+          <!-- Card 1: Investors -->
+          <div class="partner-card reveal-on-scroll">
+            <div>
+              <div class="partner-card-icon">TRACK 01 // CAPITAL</div>
+              <h3 class="partner-card-title">Investors &amp; VCs</h3>
+              <p class="partner-card-desc">
+                Partner with us during our seed stage. We are opening discussions with visionary automotive investors and private syndicates to fund full-scale physical prototype tooling, CAD validation, and crash homologation.
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Discuss Investment</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 2: Engineers -->
+          <div class="partner-card reveal-on-scroll">
+            <div>
+              <div class="partner-card-icon">TRACK 02 // TECHNICAL</div>
+              <h3 class="partner-card-title">Engineers &amp; CFD</h3>
+              <p class="partner-card-desc">
+                Calling powertrain architects, suspension dynamicists, motorsport fabricators, and aerodynamicists passionate about raw, lightweight internal-combustion driver vehicles. Collaborate on our engineering sprints.
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Join Engineering Desk</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 3: Manufacturers -->
+          <div class="partner-card reveal-on-scroll">
+            <div>
+              <div class="partner-card-icon">TRACK 03 // MANUFACTURING</div>
+              <h3 class="partner-card-title">Tier-1 Suppliers</h3>
+              <p class="partner-card-desc">
+                We are actively scouting partnerships with specialized carbon composites molders, CNC aluminum chassis fabricators, transmission suppliers, and automotive prototyping facilities.
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Supplier Collaboration</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 7: INTERACTIVE CONTACT & TELEMETRY FORM
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">COMMUNICATION UPLINK</div>
+          <h2 class="section-title">TRANSMIT INQUIRY</h2>
+          <p class="section-subtitle">
+            Connect directly with the ANIMA MOTORS™ founders and prototype project desk. Direct inquiries are reviewed within 48 hours.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Channels & Brand Identity -->
+          <div class="reveal-on-scroll">
+            <h3 style="font-size: 1.35rem; margin-bottom: 12px; color: var(--text-main);">
+              DIRECT PROJECT DESK
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">
+              For immediate investor briefings, technical dossiers, or media inquiries, reach out through our official channels.
+            </p>
+
+            <div class="direct-contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-secondary);" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-family: var(--font-mono);">Official Email</div>
+                <a href="mailto:animamotorsdrive@gmail.com">animamotorsdrive@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="direct-contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-secondary);" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-family: var(--font-mono);">Instagram Channel</div>
+                <a href="https://instagram.com/animamotorsdrive" target="_blank" rel="noopener noreferrer">@animamotorsdrive</a>
+              </div>
+            </div>
+
+            <div class="hud-badge" style="margin-top: 30px;">
+              <span class="pulse-dot"></span>
+              <span>COMMUNICATION DESK: ONLINE</span>
+            </div>
+          </div>
+
+          <!-- Interactive Formspree Contact Form -->
+          <div class="form-card reveal-on-scroll">
+            <!--
+              NOTE ON FORMSPREE CONFIGURATION:
+              To receive inquiries directly to your email inbox:
+              1. Register free at https://formspree.io
+              2. Create a new form and copy your Form ID (e.g. 'mzzbkgvw')
+              3. Replace 'YOUR_FORMSPREE_ID' in the action URL below:
+            -->
+            <form id="partner-contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Full Name *</label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Elena Vance" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Official Email Address *</label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="name@organization.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-interest" class="form-label">Interest / Collaboration Track *</label>
+                <select id="contact-interest" name="interest_type" class="form-select" required>
+                  <option value="" disabled selected>Select your domain</option>
+                  <option value="investor">Investor / Capital Partner</option>
+                  <option value="engineer">Automotive Engineer / Aerodynamicist</option>
+                  <option value="manufacturer">Component / Tier-1 Manufacturer</option>
+                  <option value="press">Automotive Media / Press</option>
+                  <option value="other">General Inquiry / Concept Enthusiast</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message / Partnership Proposal *</label>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Detail your background, engineering capabilities, or investment interest..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-sheen" id="form-submit-btn" style="width: 100%;">
+                <span>Transmit Inquiry</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+
+              <div class="form-status-alert" id="form-status-alert" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER & CONCEPT HOMOLOGATION DISCLAIMER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <!-- Prominent Concept Disclaimer Box -->
+      <div class="footer-disclaimer-box">
+        <div class="disclaimer-title">NOTICE: DIGITAL CONCEPT HOMOLOGATION</div>
+        <p class="disclaimer-text">
+          The models, specifications, and designs displayed on this website are currently 3D digital concepts and do not represent production vehicles. We are actively seeking engineering, manufacturing, and investment partners to bring these designs to reality.
+        </p>
+      </div>
+
+      <!-- Footer Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; margin-bottom: 40px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <img src="images/logo-footer.webp" alt="ANIMA MOTORS™ Emblem" class="brand-logo-img" width="32" height="32" loading="lazy">
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; letter-spacing: 0.08em;">ANIMA MOTORS™</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            Reviving early-2000s performance car design heritage through pure mechanical dynamics and modern aerodynamics.
+          </p>
+        </div>
+
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; color: var(--text-main);">
+            Navigation
+          </div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="#hero" style="transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-secondary)'">Overview</a></li>
+            <li><a href="#showcase" style="transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-secondary)'">Anima R1 Architecture</a></li>
+            <li><a href="#specs" style="transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-secondary)'">Telemetry Specs</a></li>
+            <li><a href="#gallery" style="transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-secondary)'">Multi-Angle Gallery</a></li>
+            <li><a href="#story" style="transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-secondary)'">Our Story &amp; Heritage</a></li>
+            <li><a href="#partners" style="transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-secondary)'">Partner Directory</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; color: var(--text-main);">
+            Inquiries
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7;">
+            <div>Email: <a href="mailto:animamotorsdrive@gmail.com" style="text-decoration: underline; color: var(--text-main);">animamotorsdrive@gmail.com</a></div>
+            <div>Instagram: <a href="https://instagram.com/animamotorsdrive" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: var(--text-main);">@animamotorsdrive</a></div>
+            <div style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+              Repository: <a href="https://github.com/animamotors/animamotors.github.io" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">GitHub Pages</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright strip -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 ANIMA MOTORS™. ALL RIGHTS RESERVED.</div>
+        <div style="display: flex; gap: 20px;">
+          <span>PRECISION / POWER / PURITY</span>
+          <span>PROGRAM: ANM-01-RWD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Production Client Logic (Vanilla JS) -->
+  <script src="js/main.js"></script>
+</body>
+</html>
