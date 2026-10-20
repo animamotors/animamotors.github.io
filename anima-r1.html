@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ==========================================================================
+       PRIMARY SEO & META INFORMATION
+       ========================================================================== -->
+  <title>Anima R1 | ANIMA MOTORS™</title>
+  <meta name="description" content="Discover the Anima R1 concept: an analogue rear-wheel-drive sports sedan with a 6-speed manual gearbox, 50:50 balance, and 421 BHP.">
+  <meta name="author" content="ANIMA MOTORS™">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#070709" id="theme-color-meta">
+  <link rel="canonical" href="https://animamotors.github.io/anima-r1.html">
+
+  <!-- Vector Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph / Facebook Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://animamotors.github.io/anima-r1.html">
+  <meta property="og:title" content="Anima R1 | ANIMA MOTORS™">
+  <meta property="og:description" content="An analogue rear-wheel-drive sports sedan with a 6-speed manual gearbox, 50:50 balance, and 421 BHP.">
+  <meta property="og:image" content="https://animamotors.github.io/images/anima-r1-front.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://animamotors.github.io/anima-r1.html">
+  <meta name="twitter:title" content="Anima R1 | ANIMA MOTORS™">
+  <meta name="twitter:description" content="An analogue rear-wheel-drive sports sedan with a 6-speed manual gearbox, 50:50 balance, and 421 BHP.">
+  <meta name="twitter:image" content="https://animamotors.github.io/images/anima-r1-front.webp">
+
+  <!-- Google Fonts: Space Grotesk (Headings), Inter (Body), JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Production Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Early Theme & JS Detection to Prevent FOUC -->
+  <script>
+    (function() {
+      try {
+        document.documentElement.classList.add('js');
+        var saved = localStorage.getItem('anima-theme');
+        if (saved === 'light') {
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="page-model">
+  <!-- Accessible Skip-to-Content Link -->
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+  <!-- ==========================================================================
+       HEADER (Solid Compact State on Subpages)
+       ========================================================================== -->
+  <header class="navbar is-compact navbar--solid" id="main-navbar" data-compact-always>
+    <!-- Top Row: Brand Link (Left) & Mobile Controls (Right) -->
+    <div class="nav-top-row">
+      <div class="container nav-top-container">
+        <a href="index.html#hero" class="brand-link" aria-label="Anima Motors Homepage">
+          <img src="images/logo.webp" alt="ANIMA MOTORS™ Emblem" class="brand-logo-img" width="26" height="26" loading="eager">
+          <span class="brand-name">ANIMA MOTORS™</span>
+        </a>
+
+        <!-- Mobile Header Controls -->
+        <div class="nav-mobile-actions">
+          <button type="button" class="theme-switch" id="theme-toggle-mobile" aria-label="Switch to light theme">
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+          </button>
+
+          <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thin Horizontal Divider Line Under Top Row (Hidden in solid compact) -->
+    <div class="nav-divider" aria-hidden="true"></div>
+
+    <!-- Bottom Row (Desktop Navigation Links & Theme Toggle) -->
+    <div class="nav-bottom-row">
+      <div class="container nav-bottom-container">
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="index.html#hero" class="nav-link">Overview</a></li>
+            <li><a href="anima-r1.html" class="nav-link" aria-current="page">Models</a></li>
+            <li><a href="index.html#story" class="nav-link">Our story</a></li>
+            <li><a href="index.html#partners" class="nav-link">Partners</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-desktop-actions">
+          <button type="button" class="theme-switch" id="theme-toggle" aria-label="Switch to light theme">
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Full-Screen Overlay Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation" inert>
+    <div class="mobile-drawer-inner">
+      <nav aria-label="Mobile Navigation Links">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html#hero" class="mobile-nav-link">Overview</a></li>
+          <li><a href="anima-r1.html" class="mobile-nav-link" aria-current="page">Models</a></li>
+          <li><a href="index.html#story" class="mobile-nav-link">Our story</a></li>
+          <li><a href="index.html#partners" class="mobile-nav-link">Partners</a></li>
+          <li><a href="index.html#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="index.html#contact" class="btn btn-primary btn-sheen btn-full">
+          <span>Get in touch</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" class="page-model-main">
+    <!-- ==========================================================================
+         MODEL HEADER: BREADCRUMB, TITLE, LEAD & WIDE FRONT RENDER
+         ========================================================================== -->
+    <section class="section model-header-section">
+      <div class="container">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="index.html#models">Models</a></li>
+            <li aria-hidden="true" class="breadcrumb-sep">/</li>
+            <li aria-current="page">Anima R1</li>
+          </ol>
+        </nav>
+
+        <h1 class="model-page-title">Anima R1</h1>
+        <p class="model-page-lead">
+          A rear-wheel-drive sports sedan with a manual gearbox and no driver-assist filters.
+        </p>
+
+        <!-- Wide Front Render -->
+        <div class="model-hero-frame">
+          <img
+            src="images/anima-r1-front.webp"
+            alt="Front three-quarter view of the Anima R1"
+            class="model-hero-img"
+            width="1376"
+            height="768"
+            loading="eager"
+            fetchpriority="high"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION: ENGINEERING & KEY FACTS
+         ========================================================================== -->
+    <section class="section" id="engineering">
+      <div class="container">
+        <div class="showcase-grid">
+          <!-- Overview / Engineering Card -->
+          <div class="showcase-card reveal-on-scroll">
+            <h2 class="showcase-card-title">Engineering</h2>
+            <p class="showcase-card-p">
+              The Anima R1 is a rear-wheel-drive sports sedan powered by the Apex-4 engine core (OEM: Mercedes-AMG M139). Built with a longitudinal powertrain layout, a 6-speed manual transmission, and lightweight chassis dynamics, the R1 delivers supercar performance in a high-rigidity package.
+            </p>
+            <p class="showcase-card-p-last">
+              Designed to prioritize mechanical steering feel, predictable breakaway characteristics at the limit, and an early-2000s low-slung beltline silhouette.
+            </p>
+
+            <div class="showcase-cta-wrapper">
+              <a href="index.html#contact" class="btn btn-secondary btn-sheen">
+                <span>Request technical details</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Key Facts Breakdown Card -->
+          <div class="showcase-card reveal-on-scroll">
+            <h2 class="showcase-card-title">Key facts</h2>
+            <div class="tech-spec-list">
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Engine</span>
+                <span class="tech-spec-val">Anima Apex-4 (OEM: Mercedes-AMG M139)</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Layout</span>
+                <span class="tech-spec-val">Longitudinal Front-Mid / RWD</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Transmission</span>
+                <span class="tech-spec-val">6-Speed Manual</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Differential</span>
+                <span class="tech-spec-val">Mechanical Limited-Slip (1.5-Way)</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Weight distribution</span>
+                <span class="tech-spec-val">50:50</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label">Drag coefficient</span>
+                <span class="tech-spec-val">0.218 Cd</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION: PERFORMANCE SPECS
+         ========================================================================== -->
+    <section class="section section-alt-bg" id="specs">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Performance</h2>
+          <p class="section-subtitle">
+            Target figures for the Anima R1 prototype.
+          </p>
+        </div>
+
+        <!-- 6 Performance Stat Tiles -->
+        <div class="specs-grid" id="specs-matrix">
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">0-100 km/h</span>
+            <div class="spec-tile-value">
+              <span class="stat-counter" data-target="3.9" data-decimals="1">3.9</span>
+              <span class="spec-tile-unit">SEC</span>
+            </div>
+          </div>
+
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">Top speed</span>
+            <div class="spec-tile-value">
+              <span class="stat-counter" data-target="270" data-decimals="0">270</span>
+              <span class="spec-tile-unit">KM/H</span>
+            </div>
+          </div>
+
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">Power</span>
+            <div class="spec-tile-value">
+              <span class="stat-counter" data-target="421" data-decimals="0">421</span>
+              <span class="spec-tile-unit">BHP</span>
+            </div>
+          </div>
+
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">Torque</span>
+            <div class="spec-tile-value">
+              <span class="stat-counter" data-target="500" data-decimals="0">500</span>
+              <span class="spec-tile-unit">NM</span>
+            </div>
+          </div>
+
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">Highway economy</span>
+            <div class="spec-tile-value">
+              <span class="stat-counter" data-target="13.2" data-decimals="1">13.2</span>
+              <span class="spec-tile-unit">KM/L</span>
+            </div>
+          </div>
+
+          <div class="spec-tile reveal-on-scroll">
+            <span class="spec-tile-label">Starting price</span>
+            <div class="spec-tile-value spec-tile-price">
+              <span>₹22,49,999</span>
+            </div>
+            <span class="spec-tile-subtext">Projected, ex-showroom</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION: GALLERY
+         ========================================================================== -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Gallery</h2>
+          <p class="section-subtitle">
+            The Anima R1 from four angles.
+          </p>
+        </div>
+
+        <div class="gallery-wrapper reveal-on-scroll">
+          <!-- Main Carousel Viewport -->
+          <div class="slider-container" id="car-gallery-slider" role="region" aria-roledescription="carousel" aria-label="Anima R1 gallery" tabindex="0">
+            <!-- Slide 1: Front -->
+            <div class="slide active" role="group" aria-roledescription="slide" aria-label="1 of 4" id="slide-0">
+              <img 
+                src="images/anima-r1-front.webp" 
+                alt="Front three-quarter view of the Anima R1" 
+                class="slide-image"
+                width="1376" 
+                height="768" 
+                loading="lazy"
+              >
+            </div>
+
+            <!-- Slide 2: Side -->
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4" id="slide-1">
+              <img 
+                src="images/anima-r1-side.webp" 
+                alt="Side profile view of the Anima R1" 
+                class="slide-image"
+                width="1376" 
+                height="768" 
+                loading="lazy"
+              >
+            </div>
+
+            <!-- Slide 3: Rear -->
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4" id="slide-2">
+              <img 
+                src="images/anima-r1-rear.webp" 
+                alt="Rear view of the Anima R1" 
+                class="slide-image"
+                width="1376" 
+                height="768" 
+                loading="lazy"
+              >
+            </div>
+
+            <!-- Slide 4: Top -->
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4" id="slide-3">
+              <img 
+                src="images/anima-r1-top.webp" 
+                alt="Top-down view of the Anima R1" 
+                class="slide-image"
+                width="1376" 
+                height="768" 
+                loading="lazy"
+              >
+            </div>
+
+            <!-- Slider Arrows -->
+            <div class="slider-controls">
+              <button type="button" class="slider-btn" id="gallery-prev-btn" aria-label="Previous image">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button type="button" class="slider-btn" id="gallery-next-btn" aria-label="Next image">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Position Counter -->
+            <div class="gallery-counter" id="gallery-counter" aria-live="polite">1 / 4</div>
+          </div>
+
+          <!-- Thumbnail Selectors Row -->
+          <div class="gallery-thumbs" role="tablist" aria-label="Gallery views">
+            <button type="button" class="gallery-thumb-btn active" data-index="0" role="tab" aria-selected="true" aria-controls="slide-0" id="thumb-0">
+              <span class="thumb-angle">Front</span>
+            </button>
+            <button type="button" class="gallery-thumb-btn" data-index="1" role="tab" aria-selected="false" aria-controls="slide-1" id="thumb-1">
+              <span class="thumb-angle">Side</span>
+            </button>
+            <button type="button" class="gallery-thumb-btn" data-index="2" role="tab" aria-selected="false" aria-controls="slide-2" id="thumb-2">
+              <span class="thumb-angle">Rear</span>
+            </button>
+            <button type="button" class="gallery-thumb-btn" data-index="3" role="tab" aria-selected="false" aria-controls="slide-3" id="thumb-3">
+              <span class="thumb-angle">Top</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CLOSING ROW: ACTIONS
+         ========================================================================== -->
+    <section class="section model-closing-section">
+      <div class="container">
+        <div class="model-page-actions reveal-on-scroll">
+          <a href="index.html#contact" class="btn btn-primary btn-sheen">
+            <span>Request technical details</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="index.html#models" class="btn btn-outline">
+            <span aria-hidden="true">&larr;</span>
+            <span>Back to our models</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-disclaimer-box">
+        <div class="disclaimer-title">Concept notice</div>
+        <p class="disclaimer-text">
+          All models, specifications and images on this site are digital concepts, not production vehicles. We are looking for engineering, manufacturing and investment partners.
+        </p>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-header">
+            <img src="images/logo-footer.webp" alt="ANIMA MOTORS™ Emblem" class="brand-logo-img" width="32" height="32" loading="lazy">
+            <span class="footer-brand-title">ANIMA MOTORS™</span>
+          </div>
+          <p class="footer-brand-desc">
+            Reviving early-2000s performance car design heritage through pure mechanical dynamics and modern aerodynamics.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-nav-list">
+            <li><a href="index.html#hero">Overview</a></li>
+            <li><a href="anima-r1.html" aria-current="page">Models</a></li>
+            <li><a href="index.html#story">Our story</a></li>
+            <li><a href="index.html#partners">Partners</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Inquiries</div>
+          <div class="footer-inquiries">
+            <div>Email: <a href="mailto:animamotorsdrive@gmail.com">animamotorsdrive@gmail.com</a></div>
+            <div>Instagram: <a href="https://instagram.com/animamotorsdrive" target="_blank" rel="noopener noreferrer">@animamotorsdrive</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ANIMA MOTORS™. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Production Client Logic (Vanilla JS) -->
+  <script src="js/main.js"></script>
+</body>
+</html>

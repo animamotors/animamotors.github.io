@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ==========================================================================
+       PRIMARY SEO & META INFORMATION
+       ========================================================================== -->
+  <title>Anima Motors</title>
+  <meta name="description" content="Anima Motors is an automotive concept reviving early-2000s analogue performance through mechanical dynamics and modern aerodynamics.">
+  <meta name="author" content="ANIMA MOTORS™">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#070709" id="theme-color-meta">
+  <link rel="canonical" href="https://animamotors.github.io/">
+
+  <!-- Vector Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph / Facebook Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://animamotors.github.io/">
+  <meta property="og:title" content="Anima Motors — Concept Portfolio">
+  <meta property="og:description" content="Reviving early-2000s performance car design heritage through pure analogue dynamics and modern aerodynamics.">
+  <meta property="og:image" content="https://animamotors.github.io/images/anima-r1-hero.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://animamotors.github.io/">
+  <meta name="twitter:title" content="Anima Motors — Concept Portfolio">
+  <meta name="twitter:description" content="Reviving early-2000s performance car design heritage through pure analogue dynamics and modern aerodynamics.">
+  <meta name="twitter:image" content="https://animamotors.github.io/images/anima-r1-hero.jpg">
+
+  <!-- Google Fonts: Space Grotesk (Headings), Inter (Body), JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Production Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Early Theme & JS Detection to Prevent FOUC -->
+  <script>
+    (function() {
+      try {
+        document.documentElement.classList.add('js');
+        var saved = localStorage.getItem('anima-theme');
+        if (saved === 'light') {
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Accessible Skip-to-Content Link -->
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+  <!-- ==========================================================================
+       HEADER (Dual-Row at Top, Collapses into 64px Bar on Scroll)
+       ========================================================================== -->
+  <header class="navbar" id="main-navbar">
+    <!-- Top Row: Brand Link (Left) & Mobile Controls (Right) -->
+    <div class="nav-top-row">
+      <div class="container nav-top-container">
+        <a href="#hero" class="brand-link" aria-label="Anima Motors Homepage">
+          <img src="images/logo.webp" alt="ANIMA MOTORS™ Emblem" class="brand-logo-img" width="34" height="34" loading="eager">
+          <span class="brand-name">ANIMA MOTORS™</span>
+        </a>
+
+        <!-- Mobile Header Controls -->
+        <div class="nav-mobile-actions">
+          <button type="button" class="theme-switch" id="theme-toggle-mobile" aria-label="Switch to light theme">
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+          </button>
+
+          <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thin Horizontal Divider Line Under Top Row -->
+    <div class="nav-divider" aria-hidden="true"></div>
+
+    <!-- Bottom Row (Desktop Navigation Links & Theme Toggle) -->
+    <div class="nav-bottom-row">
+      <div class="container nav-bottom-container">
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="#hero" class="nav-link">Overview</a></li>
+            <li><a href="#models" class="nav-link">Models</a></li>
+            <li><a href="#story" class="nav-link">Our story</a></li>
+            <li><a href="#partners" class="nav-link">Partners</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-desktop-actions">
+          <button type="button" class="theme-switch" id="theme-toggle" aria-label="Switch to light theme">
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Full-Screen Overlay Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation" inert>
+    <div class="mobile-drawer-inner">
+      <nav aria-label="Mobile Navigation Links">
+        <ul class="mobile-nav-list">
+          <li><a href="#hero" class="mobile-nav-link">Overview</a></li>
+          <li><a href="#models" class="mobile-nav-link">Models</a></li>
+          <li><a href="#story" class="mobile-nav-link">Our story</a></li>
+          <li><a href="#partners" class="mobile-nav-link">Partners</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="#contact" class="btn btn-primary btn-sheen btn-full">
+          <span>Get in touch</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- ==========================================================================
+         SECTION 1: HERO
+         ========================================================================== -->
+    <section class="hero-section" id="hero" aria-label="Hero">
+      <!-- Background Video Layer -->
+      <div class="hero-media-container">
+        <video
+          class="hero-video"
+          id="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="assets/images/hero-poster.jpg"
+          aria-hidden="true"
+          tabindex="-1"
+        >
+          <source src="assets/video/hero.webm" type="video/webm">
+          <img src="assets/images/hero-poster.jpg" alt="Anima R1 concept" class="hero-fallback-img">
+        </video>
+        <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      </div>
+
+      <!-- Hero Bottom-Left Magazine Content -->
+      <div class="container hero-content-wrapper">
+        <div class="hero-content">
+          <h1 class="hero-headline">
+            <span class="hero-headline-bold">REVIVING THE RAW SOUL</span>
+            <span class="hero-headline-light">OF PERFORMANCE.</span>
+          </h1>
+
+          <p class="hero-description">
+            ANIMA MOTORS™ is an independent concept automotive brand engineered to revive the unfiltered mechanical engagement of early-2000s homologation performance cars. Driven by analogue dynamics, longitudinal rear-wheel drive, and modern aerodynamics.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary btn-sheen">
+              <span>PARTNER WITH US</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="3" y1="8" x2="13" y2="8"></line>
+                <polyline points="9 4 13 8 9 12"></polyline>
+              </svg>
+            </a>
+            <a href="#models" class="btn btn-outline">
+              <span>VIEW OUR MODELS</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="3" y1="8" x2="13" y2="8"></line>
+                <polyline points="9 4 13 8 9 12"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Center: Animated Scroll Down Cue -->
+      <a href="#models" class="hero-scroll-cue" aria-label="Scroll down to Our models">
+        <span class="scroll-cue-text">SCROLL</span>
+        <span class="scroll-cue-pill">
+          <span class="scroll-cue-wheel"></span>
+        </span>
+      </a>
+
+      <!-- Bottom Right: Video Pause / Play Button -->
+      <div class="hero-video-controls">
+        <button
+          type="button"
+          class="video-toggle-btn"
+          id="hero-video-toggle"
+          aria-label="Pause background video"
+          title="Pause background video"
+        >
+          <svg class="video-icon video-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="6" y="5" width="4" height="14" rx="1"></rect>
+            <rect x="14" y="5" width="4" height="14" rx="1"></rect>
+          </svg>
+          <svg class="video-icon video-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="6,4 20,12 6,20"></polygon>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: OUR MODELS
+         ========================================================================== -->
+    <section class="section" id="models">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Our models</h2>
+          <p class="section-subtitle">
+            Our first model, the Anima R1, is in development.
+          </p>
+        </div>
+
+        <div class="models-grid reveal-on-scroll">
+          <a href="anima-r1.html" class="model-card" aria-label="Anima R1, view model">
+            <div class="model-card-media">
+              <img
+                src="images/models-anima-r1-night.webp"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                width="1920"
+                height="1080"
+                class="model-card-img model-card-img--night"
+              >
+              <img
+                src="images/models-anima-r1-day.webp"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                width="1920"
+                height="1080"
+                class="model-card-img model-card-img--day"
+              >
+              <div class="model-card-gradient" aria-hidden="true"></div>
+            </div>
+
+            <div class="model-card-content">
+              <div class="model-card-caption">
+                <span class="model-card-title">Anima R1</span>
+                <span class="model-card-subtitle">Sports sedan</span>
+              </div>
+              <div class="model-card-cta">
+                <span class="model-card-cta-text">View model</span>
+                <span class="model-card-cta-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5: OUR STORY
+         ========================================================================== -->
+    <section class="section" id="story">
+      <div class="container">
+        <div class="story-grid">
+          <div class="reveal-on-scroll">
+            <h2 class="section-title">Our story</h2>
+            <p class="story-lead">
+              The early 2000s produced some of the most engaging performance cars ever made. They offered direct mechanical steering, balanced chassis dynamics, and an unfiltered connection between driver and road.
+            </p>
+            <p class="story-body">
+              Over the last two decades, modern performance cars have added significant weight and layers of electronic intervention. Pure mechanical feedback has largely been replaced by synthetic drive modes and digital interfaces.
+            </p>
+            <p class="story-body">
+              Anima Motors is building the R1 to bring that analogue driving connection back. We combine the tactile character of classic driver-focused cars with modern composites and aerodynamic engineering.
+            </p>
+
+            <div class="story-pillar-grid">
+              <div class="story-pillar">
+                <h3 class="pillar-title">Manual gearbox</h3>
+                <p class="pillar-desc">A 6-speed manual with direct mechanical linkage and no synthetic rev-hang.</p>
+              </div>
+              <div class="story-pillar">
+                <h3 class="pillar-title">50:50 balance</h3>
+                <p class="pillar-desc">A longitudinal front-mid engine layout for neutral handling and predictable response.</p>
+              </div>
+              <div class="story-pillar">
+                <h3 class="pillar-title">Mechanical differential</h3>
+                <p class="pillar-desc">A 1.5-way clutch-type limited-slip differential for progressive mechanical traction.</p>
+              </div>
+              <div class="story-pillar">
+                <h3 class="pillar-title">Underbody aerodynamics</h3>
+                <p class="pillar-desc">Venturi floor tunnels generate high-speed stability without adding excessive drag.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Studio Heritage Visual -->
+          <div class="reveal-on-scroll story-visual-wrapper">
+            <div class="story-visual-frame">
+              <img 
+                src="images/atelier-studio.webp" 
+                alt="Automotive design studio" 
+                width="1024" 
+                height="768" 
+                class="story-visual-img"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6: PARTNERS
+         ========================================================================== -->
+    <section class="section section-alt-bg" id="partners">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Partners</h2>
+          <p class="section-subtitle">
+            Anima Motors is at concept stage. We are looking for investors, engineers and suppliers to build the first prototype.
+          </p>
+        </div>
+
+        <div class="partner-card-grid">
+          <!-- Card 1: Investors -->
+          <div class="partner-card reveal-on-scroll">
+            <div>
+              <h3 class="partner-card-title">Investors</h3>
+              <p class="partner-card-desc">
+                We are opening seed discussions with private syndicates and automotive investors. Capital will fund physical prototype tooling, structural validation, and testing.
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get in touch</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 2: Engineers -->
+          <div class="partner-card reveal-on-scroll">
+            <div>
+              <h3 class="partner-card-title">Engineers</h3>
+              <p class="partner-card-desc">
+                We collaborate with chassis dynamicists, powertrain engineers, and aerodynamicists. Join us in refining the engineering architecture for the R1.
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get in touch</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 3: Suppliers -->
+          <div class="partner-card reveal-on-scroll">
+            <div>
+              <h3 class="partner-card-title">Suppliers</h3>
+              <p class="partner-card-desc">
+                We are establishing partnerships with tier-1 automotive suppliers and fabrication specialists. Areas include carbon composites, CNC chassis components, and manual transmissions.
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get in touch</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 7: CONTACT
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            We reply within 48 hours.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Channels -->
+          <div class="reveal-on-scroll">
+            <h3 class="contact-heading">Direct contact</h3>
+            <p class="contact-intro">
+              For investor discussions, engineering collaboration, or supplier inquiries, reach out through our official channels.
+            </p>
+
+            <div class="direct-contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <div>
+                <div class="contact-label">Email</div>
+                <a href="mailto:animamotorsdrive@gmail.com">animamotorsdrive@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="direct-contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <div>
+                <div class="contact-label">Instagram</div>
+                <a href="https://instagram.com/animamotorsdrive" target="_blank" rel="noopener noreferrer">@animamotorsdrive</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="form-card reveal-on-scroll">
+            <form id="partner-contact-form" action="https://formspree.io/f/xnpjwydl" method="POST">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Name</label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email</label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="name@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-interest" class="form-label">I am a...</label>
+                <select id="contact-interest" name="interest_type" class="form-select" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="investor">Investor</option>
+                  <option value="engineer">Engineer</option>
+                  <option value="supplier">Supplier</option>
+                  <option value="media">Media</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message</label>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Your message..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-sheen btn-full" id="form-submit-btn">
+                <span class="btn-text">Send message</span>
+                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+              </button>
+
+              <div class="form-status-alert" id="form-status-alert" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-disclaimer-box">
+        <div class="disclaimer-title">Concept notice</div>
+        <p class="disclaimer-text">
+          All models, specifications and images on this site are digital concepts, not production vehicles. We are looking for engineering, manufacturing and investment partners.
+        </p>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-header">
+            <img src="images/logo-footer.webp" alt="ANIMA MOTORS™ Emblem" class="brand-logo-img" width="32" height="32" loading="lazy">
+            <span class="footer-brand-title">ANIMA MOTORS™</span>
+          </div>
+          <p class="footer-brand-desc">
+            Reviving early-2000s performance car design heritage through pure mechanical dynamics and modern aerodynamics.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-nav-list">
+            <li><a href="#hero">Overview</a></li>
+            <li><a href="#models">Models</a></li>
+            <li><a href="#story">Our story</a></li>
+            <li><a href="#partners">Partners</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Inquiries</div>
+          <div class="footer-inquiries">
+            <div>Email: <a href="mailto:animamotorsdrive@gmail.com">animamotorsdrive@gmail.com</a></div>
+            <div>Instagram: <a href="https://instagram.com/animamotorsdrive" target="_blank" rel="noopener noreferrer">@animamotorsdrive</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ANIMA MOTORS™. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Production Client Logic (Vanilla JS) -->
+  <script src="js/main.js"></script>
+</body>
+</html>
