@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://animamotors.github.io/sitemap.xml
