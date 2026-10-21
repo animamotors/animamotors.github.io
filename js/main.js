@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Hero Video', initHeroVideo],
     ['Scroll Header', initScrollHeader],
     ['Mobile Navigation', initMobileNavigation],
+    ['Partner Tabs', initPartnerTabs],
+    ['Sticky Bottom Bar', initStickyBottomBar],
     ['Stats Observer', initStatsObserver],
     ['Gallery Slider', initGallerySlider],
     ['Scroll Reveal', initScrollReveal],
@@ -31,7 +33,8 @@ function initTheme() {
   const html = document.documentElement;
   const toggleBtns = [
     document.getElementById('theme-toggle'),
-    document.getElementById('theme-toggle-mobile')
+    document.getElementById('theme-toggle-mobile'),
+    document.getElementById('theme-toggle-drawer')
   ].filter(Boolean);
   const themeColorMeta = document.getElementById('theme-color-meta');
 
@@ -153,6 +156,20 @@ function initMobileNavigation() {
       }
     }
   }
+
+  const closeBtn = document.getElementById('mobile-drawer-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      setDrawerOpen(false);
+    });
+  }
+
+  // Close when clicking directly on the backdrop outside inner drawer
+  drawer.addEventListener('click', (e) => {
+    if (!e.target.closest('.mobile-drawer-inner')) {
+      setDrawerOpen(false);
+    }
+  });
 
   menuBtn.addEventListener('click', () => {
     const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
@@ -506,4 +523,78 @@ function initContactForm() {
       }
     }
   });
+}
+
+/* ==========================================================================
+   9. Mobile Partner Tabs (<=768px)
+   ========================================================================== */
+function initPartnerTabs() {
+  const tabs = document.querySelectorAll('.partner-tab-btn');
+  const panels = document.querySelectorAll('.partner-card-grid .partner-card');
+  if (!tabs.length || !panels.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('aria-controls');
+      tabs.forEach(t => {
+        const isActive = t === tab;
+        t.classList.toggle('active', isActive);
+        t.setAttribute('aria-selected', String(isActive));
+      });
+      panels.forEach(p => {
+        const isActive = p.id === targetId;
+        p.classList.toggle('is-active', isActive);
+      });
+    });
+  });
+}
+
+/* ==========================================================================
+   10. Slim Sticky Bottom Bar (<=768px)
+   ========================================================================== */
+function initStickyBottomBar() {
+  const bar = document.getElementById('sticky-bottom-bar');
+  const hero = document.getElementById('hero');
+  const contact = document.getElementById('contact');
+  if (!bar || !hero) return;
+
+  let heroOutOfView = false;
+  let contactInView = false;
+
+  function updateBar() {
+    if (window.innerWidth <= 768 && heroOutOfView && !contactInView) {
+      bar.classList.add('visible');
+    } else {
+      bar.classList.remove('visible');
+    }
+  }
+
+  // Hero observer: triggers when hero leaves viewport
+  if ('IntersectionObserver' in window) {
+    const heroObserver = new IntersectionObserver(([entry]) => {
+      heroOutOfView = !entry.isIntersecting;
+      updateBar();
+    }, { threshold: 0.1 });
+    heroObserver.observe(hero);
+
+    // Contact observer: triggers when contact section enters viewport
+    if (contact) {
+      const contactObserver = new IntersectionObserver(([entry]) => {
+        contactInView = entry.isIntersecting;
+        updateBar();
+      }, { threshold: 0.05 });
+      contactObserver.observe(contact);
+    }
+  } else {
+    // Fallback on scroll
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      const contactTop = contact ? contact.getBoundingClientRect().top : 99999;
+      heroOutOfView = heroBottom < 50;
+      contactInView = contactTop < window.innerHeight - 50;
+      updateBar();
+    }, { passive: true });
+  }
+
+  window.addEventListener('resize', updateBar, { passive: true });
 }
